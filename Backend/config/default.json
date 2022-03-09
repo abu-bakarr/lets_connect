@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://lovel_dev:Lovel12345@cluster0-0irde.azure.mongodb.net/test?retryWrites=true&w=majority",
+    "secretKey": "mysecret_key",
+    "githubClient_ID": "c538d7f391471d6a567e",
+    "githubClient_Secret": "3378a7a3c688ec58b81affb2eb28c26ee9aae359"
+}
