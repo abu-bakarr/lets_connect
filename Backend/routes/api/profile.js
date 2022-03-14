@@ -19,8 +19,7 @@ router.get("/me", auth, async(req, res) => {
 
     console.log("User hereNow =>", req.user.id)
     try {
-        const profile = await profileModel.findOne({ user: req.user.id }).populate('user', ['name', 'avatar'])
-            // const profile = await userModel.findOne({ _id: req.user.id }).populate('user', ['name', 'avatar'])
+        const profile = await userModel.findOne({ _id: req.user.id }).populate('user', ['name', 'avatar'])
         console.log("Profile here =>", profile)
 
 
