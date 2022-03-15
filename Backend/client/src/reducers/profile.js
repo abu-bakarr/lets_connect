@@ -15,10 +15,6 @@ const initialState = {
     error: {}
 }
 
-<<<<<<< HEAD
-=======
-// eslint-disable-next-line import/no-anonymous-default-export
->>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
 export default function(state = initialState, action) {
     const { type, payload } = action
 
