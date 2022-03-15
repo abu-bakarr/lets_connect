@@ -163,10 +163,5 @@ CreateProfile.propTypes = {
 createUserProfile:PropTypes.func.isRequired,
 }
 
-<<<<<<< HEAD
 export default  connect(null, {createUserProfile})( withRouter(CreateProfile))
-=======
-export default connect(null, {createUserProfile})( withRouter(CreateProfile))
- 
->>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
 
