@@ -12,14 +12,14 @@ import { setAlert } from './alertAction'
 
 //Get current users profile after loggin
 export const getUserProfile = () => async dispatch => {
-    const accessToken = localStorage.getItem("token")
+    const accessToken = localStorage.getItem("token");
     try {
         const response = await axios.get("http://localhost:5000/api/profile/me", {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `bearer ${accessToken}`
+                'authorization': `bearer ${accessToken}`
             },
         })
 
@@ -42,7 +42,6 @@ export const getUserProfile = () => async dispatch => {
 
 //Get All users profile after loggin
 export const getAllProfiles = () => async dispatch => {
-    dispatch({ type: CLEAR_PROFILE })
     try {
         const response = await axios.get("http://localhost:5000/api/profile")
 
@@ -61,10 +60,17 @@ export const getAllProfiles = () => async dispatch => {
 }
 
 //Get All users profile by ID after loggin
-export const getProfileById = userId => async dispatch => {
-    try {
-        const response = await axios.get(`http://localhost:5000/api/profile/user/${userId}`)
+export const getProfileById = user_id => async dispatch => {
 
+    try {
+        const response = await axios.get(`http://localhost:5000/api/profile/user/${user_id}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+        })
+        console.log("profiles ya ", response)
         dispatch({
             type: GET_PROFILE,
             payload: response.data
@@ -101,12 +107,14 @@ export const getUserGithub = username => async dispatch => {
 
 //Create or Update User Profile
 export const createUserProfile = (formData, history, edit = false) => async dispatch => {
-    const accessToken = localStorage.getItem("token")
+    const accessToken = localStorage.getItem("token");
+
     try {
         const config = {
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `bearer ${accessToken}`
+                'authorization': `bearer ${accessToken}`
             },
         }
         const response = await axios.post("http://localhost:5000/api/profile", formData, config)
@@ -115,8 +123,6 @@ export const createUserProfile = (formData, history, edit = false) => async disp
             type: GET_PROFILE,
             payload: response.data
         })
-
-        console.log("Craete Profile, ", response.data);
 
         dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'))
 

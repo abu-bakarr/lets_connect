@@ -9,6 +9,7 @@ import ProfileAbout from './ProfileAbout'
 import ProfileExperience from './ProfileExperience'
 import ProfileEducation from './ProfileEducation'
 import ProfileGithub from './ProfileGithub'
+import { useState } from 'react'
 
 const  Profile =({ 
     getProfileById, 
@@ -16,19 +17,22 @@ const  Profile =({
     profile: { profile, loading}, 
     match }) => {
 
+    const [myp, setP] = useState([])
+
     useEffect(() =>{
-        getProfileById(match.params.id)
-    }, [getProfileById, match.params.id])
+       const resp =  getProfileById(match.params.id)
+        setP(resp)
+    }, [getProfileById])
 
     console.log("profile===> id", match.params.id)
-    console.log("profile===>", profile)
+    console.log("myp===>", myp)
 
     return (
         <Fragment>
             {profile === null || loading ?
              <Spinner /> : 
              <Fragment>
-                 {auth.isAuthenticated && auth.loading === false && auth.user._id === profile.user._id &&
+                 {auth.isAuthenticated && auth?.loading === false && auth?.user?._id === profile.user._id &&
                  (<Link to="/edit-profile" className="btn btn-dark">
                      <i className="fas fa-pencil-square"></i>{' '}
                       Edit Profile</Link>)
@@ -38,10 +42,10 @@ const  Profile =({
                     <ProfileAbout  profile={profile} />
                     <div className="profile-exp bg-white p-2">
                         <h2 className="text-primary">Experience</h2>
-                        { profile.experience.length > 0 ? (
+                        { profile?.experience.length > 0 ? (
                             <Fragment>
-                                {profile.experience.map(exp => (
-                                    <ProfileExperience key={exp._id} experience={exp} />
+                                {profile?.experience.map(exp => (
+                                    <ProfileExperience key={exp?._id} experience={exp} />
                                 ))}
                             </Fragment>
                         ) : 
@@ -50,16 +54,16 @@ const  Profile =({
                     </div>
                     <div className="profile-edu bg-white p-2">
                         <h2 className="text-primary">Education</h2>
-                        {profile.education.length > 0 ? (
+                        {profile?.education.length > 0 ? (
                             <Fragment>
-                                {profile.education.map(edu => (
-                                    <ProfileEducation key={edu._id} education={edu} />
+                                {profile?.education.map(edu => (
+                                    <ProfileEducation key={edu?._id} education={edu} />
                                 ))}
                             </Fragment>
                         ) : 
                         (<h4>No Educational Record found</h4>)}
                     </div>
-              {profile.githubusername && <ProfileGithub username={profile.githubusername}/> } 
+              {profile?.githubusername && <ProfileGithub username={profile?.githubusername}/> } 
             </div>
             <Link to="/profiles" className="btn bn-light">
             <i className="fas fa-share"></i>{' '}

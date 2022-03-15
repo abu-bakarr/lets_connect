@@ -17,10 +17,9 @@ const githubClientSecret = config.get('githubClient_Secret')
 // api/profile/me => Get 
 router.get("/me", auth, async(req, res) => {
 
-    console.log("User hereNow =>", req.user.id)
     try {
-        const profile = await userModel.findOne({ _id: req.user.id }).populate('user', ['name', 'avatar'])
-        console.log("Profile here =>", profile)
+        const profile = await profileModel.findOne({ user: req.user.id }).populate('user', ['name', 'avatar'])
+            // const profile = await userModel.findOne({ _id: req.user.id }).populate('user', ['name', 'avatar'])
 
 
         if (!profile) {
@@ -107,13 +106,14 @@ router.get("/", async(req, res) => {
 
     try {
         let profiles = await profileModel.find().populate('user', ['name', 'avatar', 'email'])
-        res.json(profiles)
+
+        return res.json(profiles)
 
     } catch (err) {
         console.error(err.message)
-        res.status(500).send("Server Error")
+        return res.status(500).send("Server Error")
     }
-    return
+
 })
 
 //@access  => Public
@@ -121,11 +121,12 @@ router.get("/", async(req, res) => {
 // api/profile/user/<id> => Get One 
 router.get("/user/:user_id", async(req, res) => {
 
+    console.log("profile ", req.params)
     try {
         let profile = await profileModel.findOne({ user: req.params.user_id }).populate({ path: 'user', select: ['name', 'avatar'] })
         if (!profile) res.status(400).json({ msg: "No profile for this user" })
 
-        console.log(profile)
+
         res.json(profile)
         return
     } catch (err) {

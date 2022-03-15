@@ -17,26 +17,26 @@ const  ProfileGithub =  ({username, getUserGithub, repos}) => {
                     {repos === null ? 
                     (<Spinner />)  :
                     (
-                        repos.map(repo => (
-                            <div key={repo._id} className="repo bg-white p-1 my-1">
+                        repos?.map(repo => (
+                            <div key={repo?._id} className="repo bg-white p-1 my-1">
                                 <div>
                                     <h4>
-                                        <a href={repo.html_url} target="_blank" rel="noopener noreferer">
-                                            {repo.name}
+                                        <a href={repo?.html_url} target="_blank" rel="noopener noreferer">
+                                            {repo?.name}
                                         </a>
                                     </h4>
-                                 <p>{repo.description}</p>
+                                 <p>{repo?.description}</p>
                                 </div>
                                 <div>
                                     <ul>
                                         <li className="badge badge-primary">
-                                            Stars: {repo.stargazers_count}
+                                            Stars: {repo?.stargazers_count}
                                         </li>
                                         <li className="badge badge-dark">
-                                            Watcher(s): {repo.watchers_count}
+                                            Watcher(s): {repo?.watchers_count}
                                         </li>
                                         <li className="badge badge-light">
-                                            Fork(s): {repo.forks_cunt}
+                                            Fork(s): {repo?.forks_cunt}
                                         </li>
                                     </ul>
                                 </div>
