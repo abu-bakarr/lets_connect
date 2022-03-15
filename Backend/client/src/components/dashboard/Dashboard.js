@@ -20,14 +20,25 @@ const Dashboard = ({
         getUserProfile();
     },[getUserProfile]);
 
+<<<<<<< HEAD
     return loading ? (<Spinner />) : 
+=======
+    console.log("getUserProfile User", profile);
+    return loading  ? (<Spinner />) : 
+>>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
            (<Fragment>
                  <h1 className="large text-primary">Dashboard</h1>   
                  <h5 className="lead">
                  <i className="fas fa-user">{'  '}</i>
+<<<<<<< HEAD
                          Welcome { user && user?.name}
                  </h5>
                  { profile !== null ?
+=======
+                        Welcome { profile?.name}
+                 </h5>
+                 { profile?.name !== null ?
+>>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
                         (<Fragment>
                                  <DashboardLinks/>
                                 <Experience experience={profile.experience} />

@@ -14,8 +14,11 @@ import Post from '../post/Post'
 import NotFound from '../layouts/NotFound'
 import PrivateRoute from '../routes/privateRoute'
 import Alert from '../layouts/Alert'
+<<<<<<< HEAD
 import About from '../profile/About'
 
+=======
+>>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
 
 const Routes = () => {
     return (
@@ -26,7 +29,10 @@ const Routes = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
             <Route exact path="/profile/:id" component={Profile} />
+<<<<<<< HEAD
             <Route exact path="/about" component={About} />
+=======
+>>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/create-profile" component={CreateProfile} />
             <PrivateRoute exact path="/edit-profile" component={EditProfile} />

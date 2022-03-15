@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable react-hooks/exhaustive-deps */
+>>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
 import React,{Fragment, useEffect, useState} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
@@ -41,6 +45,11 @@ const  EditProfile = ({ profile: { profile, loading},  createUserProfile, getUse
         })
     }, [loading, getUserProfile])
 
+<<<<<<< HEAD
+=======
+  const res = getUserProfile()
+  console.log("edit user profile", res);
+>>>>>>> 964b40e21eda1503c1373a1e8e5a87b856aea176
     const {  
         company,
         website,
