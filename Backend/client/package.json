@@ -1,0 +1,51 @@
+{
+    "name": "client",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/user-event": "^7.2.1",
+        "axios": "^0.26.0",
+        "moment": "^2.25.3",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-moment": "^0.9.7",
+        "react-redux": "^7.2.0",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "^3.0.1",
+        "redux": "^4.0.5",
+        "redux-devtools-extension": "^2.13.8",
+        "redux-thunk": "^2.3.0",
+        "uuid": "^8.0.0"
+    },
+    "scripts": {
+        "start": "npm run watch:css && react-scripts start",
+        "build": "npm run watch:css && react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/uuid": "^7.0.2",
+        "autoprefixer": "^10.4.2",
+        "postcss": "^8.4.8",
+        "postcss-cli": "^9.1.0",
+        "tailwindcss": "^3.0.23"
+    }
+}
