@@ -1,8 +1,5 @@
 /* Global Styles */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 :root {
     --primary-color: #da18b0;
     --dark-color: #343a40;
