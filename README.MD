@@ -1,5 +1,5 @@
 ## Let's Connect is a platform that connect developers together to share knowledge<br>
-<img width="1792" alt="Screenshot 2022-03-14 at 4 14 27 PM" src="https://user-images.githubusercontent.com/22318580/159234394-1f09fe0c-3113-4042-981e-74b8f86d4eaa.png"><br>
+<img width="1792" alt="Screenshot 2022-03-21 at 9 40 16 AM" src="https://user-images.githubusercontent.com/22318580/159236495-3811fca2-d1d1-48ed-a1b4-8dfad7bf0c1c.png"><br>
 
 # Installation
 -- To Start Backend (Nodejs Server) --<br>
