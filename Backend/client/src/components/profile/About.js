@@ -11,8 +11,7 @@ const About = () => {
             <div>
                   <h2 className="text-3xl text-center">Abubakarr Bangura</h2>
                  <p>
-Abubakarr Bangura is a Software Engineering Student at Limkokwing University of Creative Technology (LUCT). He work as a Junior Software Developer at DSTI, focused on the development of web applications using ReactJs, NodeJS and ExpressJs. 
-He is also Student Ambassador at the LUCT.</p>
+Abubakarr Bangura studied Software Engineering at Limkokwing University of Creative Technology (LUCT). He currently serves as a Senior Software Developer at DSTI, where he contributes to the development of innovative software solutions. Prior to this role, he worked as a Technical Specialist for the United Nations Population Fund (UNFPA) in Sierra Leone, where he supported various technical initiatives. Additionally, Abubakarr was a Student Ambassador at LUCT, representing the university and fostering connections within the academic community. His diverse experiences reflect a strong commitment to leveraging technology for impactful change.</p>
                     </div>
         </div>
     </>
